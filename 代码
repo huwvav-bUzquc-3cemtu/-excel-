@@ -1,0 +1,20 @@
+import numpy as np
+import pandas as pd
+import time
+path = '/Users/wangzhiyi/Downloads/工作簿2.xlsx'#规定路径
+df=pd.DataFrame(pd.read_excel(path))
+
+t_list=[]
+
+for i in df['CSRQ']:
+    i=str(i)
+    print(i)
+    t1=time.strptime(i,"%Y-%M-%d")#读取
+    t2=time.strftime("%Y%M%d",t1)#修改
+    t_list.append(t2)
+df['NEW']=t_list
+
+del df['CSRQ']
+
+
+df.to_excel('My_new.xlsx')#生成新的表格

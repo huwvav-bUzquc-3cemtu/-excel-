@@ -17,4 +17,4 @@ df['NEW']=t_list
 del df['CSRQ']
 
 
-df.to_excel('My_new.xlsx')#生成新的表格
+df.to_excel('My_new.xlsx')#生成新的表格，规定路径
